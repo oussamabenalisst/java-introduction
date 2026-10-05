@@ -17,25 +17,25 @@ public class test2 {
         int jour = sc.nextInt();
         switch (jour) {
             case 1:
-                System.out.println("lundi");
+                System.out.println("Lundi");
                 break;
             case 2:
-                System.out.println("mardi");
+                System.out.println("Mardi");
                 break;
             case 3:
-                System.out.println("mercrede");
+                System.out.println("Mercredi");
                 break;
             case 4:
-                System.out.println("jeudi");
+                System.out.println("Jeudi");
                 break;
             case 5:
-                System.out.println("vondredi");
+                System.out.println("Vendredi");
                 break;
             case 6:
-                System.out.println("samdi");
+                System.out.println("Samedi");
                 break;
             case 7:
-                System.out.println("dimanche");
+                System.out.println("Dimanche");
                 break;
             default:
                 System.out.println("error");
