@@ -10,7 +10,7 @@ public class table {
             System.out.printf("Donne tab[%d] : ", i);
             tab[i] = sc.nextInt();
         }
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < n; i++) {
             System.out.print(tab[i] + "|");
         }
 
