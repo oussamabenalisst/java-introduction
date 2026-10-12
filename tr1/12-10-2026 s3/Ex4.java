@@ -12,14 +12,15 @@ public class Ex4 {
         } while (N < 0 || N > 10);
         int T[] = new int[N];
         for (int i = 0; i < N; i++) {
-            System.out.println("Done T[" + i + "]:");
+            System.out.print("Done T[" + i + "]:");
             T[i] = sc.nextInt();
         }
         int s = 0;
         for (int i = 0; i < N; i++) {
             s += T[i];
-            System.out.print(T[i] + "|");
+            System.out.print(T[i] + " ");
         }
+        System.out.println();
         System.out.println("la somme et " + s);
     }
 }
