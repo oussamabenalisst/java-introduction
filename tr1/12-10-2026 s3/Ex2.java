@@ -13,9 +13,9 @@ public class Ex2 {
             } while (N < 0);
         }
         int F = 1;
-        for (int i = 1; i <= N; i++) {
+        for (int i = 1; i <= N; i++)
             F *= i;
-        }
+
         System.out.println("Factorielle de " + N + " est : " + F);
 
     }
