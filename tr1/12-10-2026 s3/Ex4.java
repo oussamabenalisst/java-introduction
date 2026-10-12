@@ -9,7 +9,7 @@ public class Ex4 {
             System.out.print("Donne taile de table : ");
             N = sc.nextInt();
 
-        } while (N < 0 && N > 10);
+        } while (N < 0 || N > 10);
         int T[] = new int[N];
         for (int i = 0; i < N; i++) {
             System.out.println("Done T[" + i + "]:");
