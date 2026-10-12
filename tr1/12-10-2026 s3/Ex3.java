@@ -8,17 +8,17 @@ public class Ex3 {
         int number = sc.nextInt();
         System.out.println("---------");
         if (number == 0) {
-            System.out.println("The number is zero.");
+            System.out.print("The number is zero");
         } else {
             if (number > 0) {
-                System.out.println("The number is positive.");
+                System.out.print("The number is positive");
             } else {
-                System.out.println("The number is negative.");
+                System.out.print("The number is negative");
             }
         }
         if (number % 2 == 0) {
-            System.out.println("paire");
+            System.out.println(" et paire");
         } else
-            System.out.println("impair");
+            System.out.println(" et impair");
     }
 }
