@@ -4,8 +4,9 @@ import java.util.Scanner;
 public class Ex3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter a number: ");
+        System.out.print("Enter a number: ");
         int number = sc.nextInt();
+        System.out.println("---------");
         if (number == 0) {
             System.out.println("The number is zero.");
         } else {
@@ -15,5 +16,9 @@ public class Ex3 {
                 System.out.println("The number is negative.");
             }
         }
+        if (number % 2 == 0) {
+            System.out.println("paire");
+        } else
+            System.out.println("impair");
     }
 }
