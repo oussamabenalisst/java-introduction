@@ -1,11 +1,16 @@
 /**
- * Personne
+ * Personnes
  */
-public class Personne {
-    private String nom;
-    private String prenom;
+public class Personnes {
+    private String nom, prenom, ecole;
     private int age;
-    private String ecole;
+
+    public Personnes(String n, String p, int a, String e) {
+        nom = n;
+        prenom = p;
+        age = a;
+        ecole = e;
+    }
 
     public void afficher() {
         System.out.println(

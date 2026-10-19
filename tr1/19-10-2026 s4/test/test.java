@@ -1,7 +1,7 @@
 
 public class test {
     public static void main(String[] args) {
-        Personne p = new Personne();
+        Personnes p = new Personnes("oussama", "benali", 22, "iteam");
         p.afficher();
     }
 }
