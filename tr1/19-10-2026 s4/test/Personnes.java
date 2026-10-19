@@ -2,7 +2,8 @@
  * Personnes
  */
 public class Personnes {
-    private String nom, prenom, ecole;
+    private String nom, prenom;
+    static String ecole;
     private int age;
 
     public Personnes(String n, String p, int a, String e) {
