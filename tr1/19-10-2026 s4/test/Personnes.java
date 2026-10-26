@@ -13,6 +13,10 @@ public class Personnes {
         ecole = e;
     }
 
+    public static float moy(int note1, int note2) {
+        return (float) ((note1 + note2) / 2);
+    }
+
     public void afficher() {
         System.out.println(
                 "nom :" + nom +

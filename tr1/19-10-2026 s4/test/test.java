@@ -4,6 +4,7 @@ public class test {
         Personnes p = new Personnes("oussama", "benali", 22, "iteam");
         Personnes p1 = new Personnes("test", "bentest", 22, "ISAMM");
         p.ecole = "test";
+        System.out.println((Personnes.moy(15, 5)));
         p.afficher();
         p1.afficher();
     }
