@@ -2,15 +2,14 @@
  * Personnes
  */
 public class Personnes {
-    private String nom, prenom;
-    static String ecole;
+    private String nom, prenom, ecole;
     private int age;
 
     public Personnes(String n, String p, int a, String e) {
-        nom = n;
-        prenom = p;
-        age = a;
-        ecole = e;
+        this.nom = n;
+        this.prenom = p;
+        this.age = a;
+        this.ecole = e;
     }
 
     public static float moy(int note1, int note2) {
@@ -18,11 +17,7 @@ public class Personnes {
     }
 
     public void afficher() {
-        System.out.println(
-                "nom :" + nom +
-                        " prenom : " + prenom +
-                        " age : " + age +
-                        " ecole : " + ecole);
+        System.out.println("nom :" + nom + " prenom : " + prenom + " age : " + age + " ecole : " + ecole);
     }
 
 }
