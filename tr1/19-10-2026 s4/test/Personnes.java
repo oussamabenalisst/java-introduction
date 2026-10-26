@@ -12,6 +12,38 @@ public class Personnes {
         this.ecole = e;
     }
 
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setEcole(String ecole) {
+        this.ecole = ecole;
+    }
+
+    public String getEcole() {
+        return ecole;
+    }
+
     public static float moy(int note1, int note2) {
         return (float) ((note1 + note2) / 2);
     }
