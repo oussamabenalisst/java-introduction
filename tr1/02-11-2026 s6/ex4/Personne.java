@@ -2,9 +2,9 @@
 public class Personne {
     private String nom;
     private int age;
-    double[] comptes = new double[3];
+    float[] comptes = new float[3];
 
-    public Personne(String n, int a, double[] c) {
+    public Personne(String n, int a, float[] c) {
         this.nom = n;
         this.age = a;
         this.comptes = c;
@@ -20,7 +20,7 @@ public class Personne {
 
     public void diviserParDeux() {
         for (int i = 0; i < this.comptes.length; i++) {
-            this.comptes[i] = (double) this.comptes[i] / 2;
+            this.comptes[i] = (float) this.comptes[i] / 2;
         }
     }
 
