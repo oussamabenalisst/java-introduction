@@ -5,16 +5,16 @@ public class Personne {
     double[] comptes = new double[3];
 
     public Personne(String n, int a, double[] c) {
-        nom = n;
-        age = a;
-        comptes = c;
+        this.nom = n;
+        this.age = a;
+        this.comptes = c;
     }
 
     public Personne(String n, int a) {
-        nom = n;
-        age = a;
+        this.nom = n;
+        this.age = a;
         for (int i = 0; i < 3; i++) {
-            comptes[i] = (int) Math.random() * 1000 + 1;
+            this.comptes[i] = (int) (Math.random() * 1000 + 1);
         }
     }
 
