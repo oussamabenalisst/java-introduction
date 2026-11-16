@@ -5,18 +5,19 @@ public class Chaine {
 
     public void SaisireChaine() {
         Scanner sc = new Scanner(System.in);
+        System.out.print("Saisir une chaine de caractere : ");
         ch = sc.nextLine();
     }
 
     public void AfficheChaine(String ch) {
         StringTokenizer st = new StringTokenizer(ch, " ");
+        System.out.println("les mots sont : ");
         while (st.hasMoreTokens())
             System.out.println(st.nextToken());
 
     }
 
     public int nomberOccurence(String ch, String mot) {
-
         int count = 0;
         StringTokenizer st = new StringTokenizer(ch, " ");
         while (st.hasMoreTokens()) {
