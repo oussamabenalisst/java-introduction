@@ -1,4 +1,4 @@
-package tr1.ds.ex2;
+
 
 public class Equipe {
     private int numEquipe, nbJoueurs;
@@ -8,8 +8,12 @@ public class Equipe {
     Equipe(String nomEquipe) {
         this.nomEquipe = nomEquipe;
         nbJoueurs = 0;
-        this.nomberEquipe++;
+        nomberEquipe++;
+        numEquipe = nomberEquipe;
+    }
 
+    public String toString() {
+        return ("|" + numEquipe + "| : " + nomEquipe + " avec " + nbJoueurs + " joueurs.");
     }
 
 }
