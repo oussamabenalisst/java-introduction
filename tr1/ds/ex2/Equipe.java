@@ -10,8 +10,8 @@ public class Equipe {
         numEquipe = nomberEquipe;
     }
 
-    public int getNumEquipe() {
-        return numEquipe;
+    public int getNumJoueur() {
+        return nbJoueurs;
     }
 
     public void setJoueur(int nbJoueurs) {
