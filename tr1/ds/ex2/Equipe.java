@@ -19,7 +19,7 @@ public class Equipe {
     }
 
     public String toString() {
-        return ("|" + numEquipe + "|" + nomEquipe + " avec " + nbJoueurs + " joueurs." + "|All " + nomberEquipe);
+        return ("|" + numEquipe + "|" + nomEquipe + " avec " + nbJoueurs + " joueurs." + "| All " + nomberEquipe);
     }
 
 }
