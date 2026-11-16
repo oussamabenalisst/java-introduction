@@ -10,6 +10,10 @@ public class Equipe {
         numEquipe = nomberEquipe;
     }
 
+    public int getNumEquipe() {
+        return numEquipe;
+    }
+
     public void setJoueur(int nbJoueurs) {
         this.nbJoueurs = nbJoueurs;
     }
