@@ -10,6 +10,10 @@ public class Equipe {
         numEquipe = nomberEquipe;
     }
 
+    public void setJoueur(int nbJoueurs) {
+        this.nbJoueurs = nbJoueurs;
+    }
+
     public String toString() {
         return ("|" + numEquipe + "|" + nomEquipe + " avec " + nbJoueurs + " joueurs." + "|All " + nomberEquipe);
     }
