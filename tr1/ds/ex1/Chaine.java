@@ -29,4 +29,8 @@ public class Chaine {
         return count;
     }
 
+    public String[] extractMots(String ch){
+        return ch.split("\s+");
+    }
+
 }
