@@ -1,5 +1,3 @@
-
-
 public class Equipe {
     private int numEquipe, nbJoueurs;
     private static int nomberEquipe;
@@ -13,7 +11,7 @@ public class Equipe {
     }
 
     public String toString() {
-        return ("|" + numEquipe + "| : " + nomEquipe + " avec " + nbJoueurs + " joueurs.");
+        return ("|" + numEquipe + "|" + nomEquipe + " avec " + nbJoueurs + " joueurs.");
     }
 
 }
