@@ -142,4 +142,206 @@ public class Evenement {
 
 ---
 
-*Ce module couvre uniquement l'encapsulation : modificateurs d'accès (private, public, protected), getters, setters avec validation, et avantages.*
+## Héritage
+
+### Concept
+L'héritage permet de créer une **nouvelle classe (fille)** à partir d'une **classe existante (parent)** pour réutiliser et étendre son comportement.
+
+### Syntaxe
+```java
+public class Animal {
+    protected String nom;
+    protected int age;
+    
+    public Animal(String nom, int age) {
+        this.nom = nom;
+        this.age = age;
+    }
+    
+    public void manger() {
+        System.out.println(nom + " mange...");
+    }
+    
+    public void dormir() {
+        System.out.println(nom + " dort...");
+    }
+}
+
+public class Chien extends Animal {
+    private String race;
+    
+    public Chien(String nom, int age, String race) {
+        super(nom, age);  // Appel constructeur parent
+        this.race = race;
+    }
+    
+    // Surcharge (overriding) - redéfinition méthode parent
+    @Override
+    public void manger() {
+        System.out.println(nom + " mange des croquettes...");
+    }
+    
+    // Nouvelle méthode spécifique à Chien
+    public void aboyer() {
+        System.out.println("Woof! Woof!");
+    }
+}
+```
+
+### Points Clés
+- **`extends`** : mot-clé pour hériter
+- **`super()`** : appelle constructeur parent (doit être 1ère instruction)
+- **`@Override`** : annotation indiquant redéfinition intentionnelle
+- **`protected`** : accessible dans classe fille (contrairement à `private`)
+- Héritage **simple** uniquement (une seule classe parente)
+- Tous classes héritent implicitement de `java.lang.Object`
+
+### Accès Membres Parent
+```java
+public class Enfant extends Parent {
+    void exemple() {
+        this.methodeEnfant();    // Méthode enfant
+        super.methodeParent();   // Méthode parent (même si surchargée)
+        super.attributParent;    // Attribut parent (si protected/public)
+    }
+}
+```
+
+---
+
+## Polymorphisme
+
+### Concept
+Le polymorphisme permet de **traiter des objets de types différents** via une **interface commune** (classe parent ou interface).
+
+### Polymorphisme de Sous-typage (Liaison Dynamique)
+```java
+Animal a1 = new Chien("Rex", 3, "Labrador");
+Animal a2 = new Chat("Moustache", 5, "Siamois");
+
+a1.manger();  // "Rex mange des croquettes..." (méthode Chien)
+a2.manger();  // "Moustache mange du poisson..." (méthode Chat)
+
+// Tableau polymorphe
+Animal[] animaux = {new Chien(...), new Chat(...), new Oiseau(...)};
+for (Animal a : animaux) {
+    a.manger();  // Chaque type son comportement propre
+}
+```
+
+### `instanceof` et Cast
+```java
+void nourrir(Animal a) {
+    a.manger();
+    
+    if (a instanceof Chien) {
+        Chien c = (Chien) a;  // Cast sûr après vérification
+        c.aboyer();
+    }
+    
+    // Pattern matching (Java 16+)
+    if (a instanceof Chat chat) {
+        chat.ronronner();
+    }
+}
+```
+
+### Surcharge vs Surcharge (Overloading vs Overriding)
+
+| Aspect | Surcharge (Overloading) | Surcharge/Redéfinition (Overriding) |
+|--------|------------------------|-------------------------------------|
+| **Liaison** | Statique (compilation) | Dynamique (exécution) |
+| **Signature** | Même nom, paramètres différents | Même nom, mêmes paramètres |
+| **Contexte** | Même classe | Classe parent → classe fille |
+| **Annotation** | Aucune requise | `@Override` recommandée |
+
+```java
+// Surcharge (overloading) - même classe
+public void manger() { ... }
+public void manger(String nourriture) { ... }
+
+// Surcharge/redéfinition (overriding) - classe fille
+@Override
+public void manger() { ... }  // Même signature que parent
+```
+
+---
+
+## Interfaces
+
+### Concept
+Une interface définit un **contrat** (méthodes abstraites) que les classes implémentantes doivent respecter. Elle permet le **polymorphisme sans héritage d'implémentation**.
+
+### Interface Basique
+```java
+public interface Dessinable {
+    // Constantes implicites: public static final
+    String DEFAUT_COULEUR = "noir";
+    
+    // Méthodes abstraites implicites: public abstract
+    void dessiner();
+    double getAire();
+}
+```
+
+### Implémentation
+```java
+public class Cercle implements Dessinable {
+    private double rayon;
+    
+    public Cercle(double rayon) {
+        this.rayon = rayon;
+    }
+    
+    @Override
+    public void dessiner() {
+        System.out.println("Dessin cercle rayon " + rayon);
+    }
+    
+    @Override
+    public double getAire() {
+        return Math.PI * rayon * rayon;
+    }
+}
+
+// Usage polymorphe
+Dessinable d = new Cercle(5);
+d.dessiner();           // "Dessin cercle rayon 5"
+System.out.println(d.getAire());  // 78.54...
+```
+
+### Implémentation Multiple
+```java
+public class Cercle implements Dessinable, Comparable<Cercle>, Serializable {
+    // ... implémentation des méthodes des 3 interfaces
+}
+```
+
+### Méthodes `default` et `static` (Java 8+)
+```java
+public interface Dessinable {
+    void dessiner();           // Abstraite - à implémenter
+    
+    default void afficherInfo() {  // Méthode par défaut (optionnelle à redéfinir)
+        System.out.println("Aire: " + getAire());
+    }
+    
+    static Dessinable creerCercle(double rayon) {  // Méthode utilitaire
+        return new Cercle(rayon);
+    }
+}
+```
+
+### Interface vs Classe Abstraite
+
+| Aspect | Interface | Classe Abstraite |
+|--------|-----------|------------------|
+| Héritage | Multiple (`implements`) | Simple (`extends`) |
+| État (champs) | `static final` seulement | Tous modificateurs |
+| Constructeurs | Non | Oui |
+| Méthodes par défaut | Oui (Java 8+) | Oui |
+| Utilisation | Contrat, capacité ("peut-faire") | Base commune ("est-un") |
+
+---
+
+*Ce module couvre : encapsulation, héritage (extends, super, @Override), polymorphisme (liaison dynamique, instanceof, overloading vs overriding), interfaces (implémentation, multiple, default/static).*
