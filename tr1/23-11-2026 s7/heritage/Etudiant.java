@@ -14,6 +14,6 @@ final public class Etudiant extends Personne {
     public void affiche() {
         super.affiche();
         System.out.println(
-                ", moy:" + Moyenne);
+                ", moy: " + Moyenne);
     }
 }
