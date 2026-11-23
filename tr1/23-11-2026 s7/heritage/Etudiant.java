@@ -7,8 +7,8 @@ final public class Etudiant extends Personne {
 
     }
 
-    public float moy(float n1, float n2) {
-        return ((n1 + n2) / 2);
+    public void moy(float n1, float n2) {
+        Moyenne = (n1 + n2) / 2;
     }
 
     public void affiche() {
